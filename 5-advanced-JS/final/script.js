@@ -11,6 +11,8 @@ var Person = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
+
+
 }
 
 Person.prototype.calculateAge  = function() {
@@ -102,7 +104,7 @@ console.log(obj.city);
 /////////////////////////////
 // Lecture: Passing functions as arguments
 /*
-var years = [1990, 1965, 1937, 2005, 1998];
+var years = [1990, 1968, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
     var arrRes = [];
@@ -113,7 +115,7 @@ function arrayCalc(arr, fn) {
 }
 
 function calculateAge(el) {
-    return 2016 - el;
+    return 2018 - el;
 }
 
 function isFullAge(el) {
@@ -134,6 +136,7 @@ var fullAges = arrayCalc(ages, isFullAge);
 var rates = arrayCalc(ages, maxHeartRate);
 
 console.log(ages);
+console.log(fullAges);
 console.log(rates);
 */
 
@@ -141,7 +144,7 @@ console.log(rates);
 
 /////////////////////////////
 // Lecture: Functions returning functions
-/*
+
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -169,7 +172,7 @@ designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Mark');
-*/
+
 
 
 

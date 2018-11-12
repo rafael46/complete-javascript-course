@@ -36,6 +36,8 @@ var age = 28;
 console.log(firstName + ' ' + age);
 
 var job, isMarried;
+console.log("job: "+job);
+
 job = 'teacher';
 isMarried = false;
 
