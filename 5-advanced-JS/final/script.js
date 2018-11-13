@@ -144,7 +144,7 @@ console.log(rates);
 
 /////////////////////////////
 // Lecture: Functions returning functions
-
+/*
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -172,12 +172,12 @@ designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Mark');
-
+*/
 
 
 
 /////////////////////////////
-// Lecture: IIFE
+// Lecture: IIFE  IMMEDIATELY INVOKED FUNCTIONS EXPRESSIONS--------SECTION 5
 /*
 function game() {
     var score = Math.random() * 10;
@@ -186,21 +186,24 @@ function game() {
 game();
 
 
-(function () {
+(function (name) {
+    console.log(name);
     var score = Math.random() * 10;
     console.log(score >= 5);
 })();
 
-//console.log(score);
+// console.log(score);
 
 
 (function (goodLuck) {
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck);
 })(5);
+
+(function(){
+
+})
 */
-
-
 
 /////////////////////////////
 // Lecture: Closures
@@ -214,6 +217,7 @@ function retirement(retirementAge) {
 }
 
 var retirementUS = retirement(66);
+
 var retirementGermany = retirement(65);
 var retirementIceland = retirement(67);
 
@@ -221,7 +225,7 @@ retirementGermany(1990);
 retirementUS(1990);
 retirementIceland(1990);
 
-//retirement(66)(1990);
+retirement(66)(1990);
 
 
 function interviewQuestion(job) {
@@ -278,7 +282,7 @@ var emilyFormal = john.presentation.bind(emily, 'formal');
 emilyFormal('afternoon');
 
 
-// Another cool example
+// Another cool example     -------------------------   /// VERY USEFUL EXAMPLE, USING BIND..
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -298,6 +302,7 @@ function isFullAge(limit, el) {
 }
 
 var ages = arrayCalc(years, calculateAge);
+
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
 console.log(fullJapan);
@@ -396,7 +401,7 @@ c) correct answer (I would use a number for this)
 */
 
 
-/*
+
 (function() {
     function Question(question, answers, correct) {
         this.question = question;
@@ -475,4 +480,3 @@ c) correct answer (I would use a number for this)
     nextQuestion();
     
 })();
-*/

@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /////////////////////////////////
 // Lecture: let and const
 
-/*
+
 // ES5
 var name5 = 'Jane Smith';
 var age5 = 23;
@@ -68,7 +68,7 @@ for (var i = 0; i < 5; i++) {
 }
 
 console.log(i);
-*/
+
 
 /////////////////////////////////
 // Lecture: Blocks and IIFEs
