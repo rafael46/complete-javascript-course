@@ -33,10 +33,11 @@ console.log(age);
 
 /////////////////////////////////////
 // Lecture: Scoping
-
+// next
 /*
 // First scoping example
 var a = 'Hello!';
+console.log(a );
 first();
 
 function first() {
@@ -48,8 +49,9 @@ function first() {
         console.log(a + b + c);
     }
 }
+*/
 
-
+/*
 // Example to show the differece between execution stack and scope chain
 var a = 'Hello!';
 first();
@@ -66,7 +68,7 @@ function first() {
 
 function third() {
     var d = 'John';
-    //console.log(c);
+    // console.log(c);
     console.log(a+d);
 }
 */
@@ -76,31 +78,42 @@ function third() {
 /////////////////////////////////////
 // Lecture: The this keyword
 
-/*
+
 //console.log(this);
 
+https://www.w3schools.com/code/tryit.asp?filename=FXJRMQPMI7NM
+
+
+'use strict';
+/*
 calculateAge(1985);
 
 function calculateAge(year) {
     console.log(2016 - year);
-    console.log(this);
+    console.log('outher function :: '+this);
 }
-
+*/
 var john = {
     name: 'John',
     yearOfBirth: 1990,
     calculateAge: function() {
-        console.log(this);
+        console.log('FIRST innner function THIS ::  '+this+ " "+ JSON.stringify(this) );  //
         console.log(2016 - this.yearOfBirth);
         
-        function innerFunction() {
-            console.log(this);
-        }
-        innerFunction();
-    }
+        // function innerFunction() {
+        //     console.log(this);  //'inner function OBJECt windows:: -- '+
+        // }
+        // innerFunction();
+        
+    },
+    // call1: function(){ 
+    //     console.log('i am in: '+this.calculateAge());   // UNDEFINED UNDEFINED UNDEFINED
+    // }
+    
 }
 
 john.calculateAge();
+// john.call1();
 
 var mike = {
     name: 'Mike',
@@ -110,4 +123,4 @@ var mike = {
 
 mike.calculateAge = john.calculateAge;
 mike.calculateAge();
-*/
+
