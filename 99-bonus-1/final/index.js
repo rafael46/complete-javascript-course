@@ -3,8 +3,13 @@ const http = require('http');
 const url = require('url');
 
 const json = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
-const laptopData = JSON.parse(json);
+console.log('DIR NAME: '+__dirname);
+console.log('done -----------reading dirname ----------------------------::::::::');
+// console.log(json);
+console.log('DONE reading data!!!!!!!!!!!!!!!!-------------------------');
 
+const laptopData = JSON.parse(json);
+// console.log(laptopData);
 const server = http.createServer((req, res) => {
     
     const pathName = url.parse(req.url, true).pathname;
@@ -25,7 +30,6 @@ const server = http.createServer((req, res) => {
                 res.end(overviewOutput);
             });
         });
-        
         
     }
     
