@@ -9,12 +9,13 @@ console.log('done -----------reading dirname ----------------------------:::::::
 console.log('DONE reading data!!!!!!!!!!!!!!!!-------------------------');
 
 const laptopData = JSON.parse(json);
-// console.log(laptopData);
+//  console.log(laptopData);
 const server = http.createServer((req, res) => {
-    
+    // console.log(req.url);
     const pathName = url.parse(req.url, true).pathname;
+    console.log('p: '+pathName);
     const id = url.parse(req.url, true).query.id;
-    
+    console.log(url.parse(req.url, true).query);
     // PRODUCTS OVERVIEW
     if (pathName === '/products' || pathName === '/') {
         res.writeHead(200, { 'Content-type': 'text/html'});
@@ -27,7 +28,7 @@ const server = http.createServer((req, res) => {
                 const cardsOutput = laptopData.map(el => replaceTemplate(data, el)).join('');
                 overviewOutput = overviewOutput.replace('{%CARDS%}', cardsOutput); 
                 
-                res.end(overviewOutput);
+                res.end(overviewOutput);  //   'this is the response'
             });
         });
         
