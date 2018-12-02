@@ -3,20 +3,22 @@
 
 
 // ES5
+
 /*
 var name5 = 'Jane Smith';
 var age5 = 23;
 name5 = 'Jane Miller';
-console.log(name5);
+console.log('name 5 ' + name5);
 
 // ES6
 const name6 = 'Jane Smith';
 let age6 = 23;
-// name6 = 'Jane Miller';
-console.log(name6);
+// name6 = 'Jane6 Miller';
+console.log(`Name 6----:  ${name6}`);
 */
 
 // ES5
+/*
 function driversLicence5(passedTest) {
     
     if (passedTest) {
@@ -24,8 +26,6 @@ function driversLicence5(passedTest) {
         var firstName = 'John';
         var yearOfBirth = 1990;
     }
-    
-    
     console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
 }
 
@@ -35,54 +35,58 @@ driversLicence5(true);
 // ES6
 function driversLicence6(passedTest) {
     
-    //console.log(firstName);
+    // console.log(`is not DEFINED :: ${firstName}`);  
     let firstName;
+    console.log(`UNDEFINED :: ${firstName}`);
     const yearOfBirth = 1990;
     
     if (passedTest) {
         firstName = 'John';
     }
-    
+    console.log(firstName);
     console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+    console.log(firstName);
 }
 
 driversLicence6(true);
+*/
 
+/*
+let i = 23;   // let or var 
 
-
-var i = 23;
-
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     console.log(i);
 }
 
-console.log(i);
+console.log('iiii=== ' + i);
 
-
+*/
 
 
 
 /////////////////////////////////
 // Lecture: Blocks and IIFEs
 
-/*
+
 // ES6
+/*
 {
     const a = 1;
     let b = 2;
-    var c = 3;
+    var  c = 4;  
 }
 
-//console.log(a + b);
-console.log(c);
-
+// console.log(a + b);  // a is not defined
+console.log(c);  
 
 // ES5
 (function() {
-    var c = 3;
+    var c = 5;
+    console.log(c);
 })();
 
-//console.log(c);
+console.log(c);
+
 */
 
 
@@ -108,7 +112,7 @@ console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. To
 
 
 const n = `${firstName} ${lastName}`;
-console.log(n.startsWith('j'));
+console.log(n.startsWith('J'));
 console.log(n.endsWith('Sm'));
 console.log(n.includes('oh'));
 console.log(`${firstName} `.repeat(5));
@@ -125,13 +129,18 @@ const years = [1990, 1965, 1982, 1937];
 
 // ES5
 var ages5 = years.map(function(el) {
+    // console.log(this);
     return 2016 - el;
+
 });
 console.log(ages5);
 
 
 // ES6
-let ages6 = years.map(el => 2016 - el);
+let ages6 = years.map(el => {
+    // console.log(this);
+    return (2016 - el);
+});
 console.log(ages6);
 
 ages6 = years.map((el, index) => `Age element ${index + 1}: ${2016 - el}.`);
@@ -140,7 +149,7 @@ console.log(ages6);
 ages6 = years.map((el, index) => {
     const now = new Date().getFullYear();
     const age = now - el;
-    return `Age element ${index + 1}: ${age}.`
+    return `Age element ${index + 1}:-2018 ${age}.`
 });
 console.log(ages6);
 */
@@ -158,13 +167,14 @@ var box5 = {
     position: 1,
     clickMe: function() {
        
-       var self = this; document.querySelector('.green').addEventListener('click', function() {
-            var str = 'This is box number ' + self.position + ' and it is ' + self.color;
+       var self = this; 
+       document.querySelector('.green').addEventListener('click', function() {
+            var str = 'ES5.- This is box number ' + self.position + ' and it is ' + self.color;
             alert(str);
         });
     }
 }
-//box5.clickMe();
+// box5.clickMe();
 
 
 // ES6
@@ -178,25 +188,27 @@ const box6 = {
         });
     }
 }
-box6.clickMe();
+*/
+// box6.clickMe();
 
+// does not work
+// const box66 = {
+//     color: 'green',
+//     position: 1,
+//     clickMe: () => {
+//         document.querySelector('.green').addEventListener('click', () => {
+//             var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+//             alert(str);
+//         });
+//     }
+// }
+// box66.clickMe();
 
-const box66 = {
-    color: 'green',
-    position: 1,
-    clickMe: () => {
-        document.querySelector('.green').addEventListener('click', () => {
-            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
-            alert(str);
-        });
-    }
-}
-box66.clickMe();
-
-
+/*
 function Person(name) {
     this.name = name;
 }
+
 
 // ES5
 Person.prototype.myFriends5 = function(friends) {
@@ -263,8 +275,8 @@ function calcAgeRetirement(year) {
 
 
 const [age2, retirement] = calcAgeRetirement(1990);
-console.log(age2);
-console.log(retirement);
+console.log("age 2: "+age2);
+console.log('retirement:  '+retirement);
 */
 
 
@@ -275,28 +287,34 @@ console.log(retirement);
 
 /*
 const boxes = document.querySelectorAll('.box');
+console.log("boxes: "+ JSON.stringify(boxes));
 
 //ES5
 var boxesArr5 = Array.prototype.slice.call(boxes);
+
+console.log("boxesArr5: "+ JSON.stringify(boxesArr5));
 boxesArr5.forEach(function(cur) {
     cur.style.backgroundColor = 'dodgerblue';
 });
-
+*/
+/*
 //ES6
 const boxesArr6 = Array.from(boxes);
-Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+console.log("boxesArr6: "+ JSON.stringify(boxesArr6));
+
+Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');  // JUST one line need it
 
 
 //ES5
-for(var i = 0; i < boxesArr5.length; i++) {
+// for(var i = 0; i < boxesArr5.length; i++) {
     
-    if(boxesArr5[i].className === 'box blue') {
-        continue;
-    }
+//     if(boxesArr5[i].className === 'box blue') {
+//         continue;
+//     }
     
-    boxesArr5[i].textContent = 'I changed to blue!';
+//     boxesArr5[i].textContent = 'I changed to blue!';
     
-}
+// }
 
 
 //ES6
@@ -304,7 +322,7 @@ for (const cur of boxesArr6) {
     if (cur.className.includes('blue')) {
         continue;
     }
-    cur.textContent = 'I changed to blue!';
+    cur.textContent = 'I changed to blue!!!!';
 }
 
 
@@ -360,6 +378,7 @@ console.log(bigFamily);
 const h = document.querySelector('h1');
 const boxes = document.querySelectorAll('.box');
 const all = [h, ...boxes];
+console.log(all);
 
 Array.from(all).forEach(cur => cur.style.color = 'purple');
 */
@@ -373,25 +392,26 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 /*
 //ES5
 function isFullAge5() {
-    //console.log(arguments);
+    console.log(arguments);
     var argsArr = Array.prototype.slice.call(arguments);
-    
+    console.log('argsArr: '+argsArr);
     argsArr.forEach(function(cur) {
-        console.log((2016 - cur) >= 18);
+        console.log(((2016 - cur) >= 18));
     })
 }
 
 
-//isFullAge5(1990, 1999, 1965);
-//isFullAge5(1990, 1999, 1965, 2016, 1987);
+// isFullAge5(1990, 1999, 1965);
+// isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 
 //ES6
 function isFullAge6(...years) {
-    years.forEach(cur => console.log( (2016 - cur) >= 18));
+
+    years.forEach(cur => console.log((2016 - cur) >= 18));
 }
 
-isFullAge6(1990, 1999, 1965, 2016, 1987);
+// isFullAge6(1900, 1999, 1965, 2016, 1987);
 
 
 //ES5
@@ -404,7 +424,7 @@ function isFullAge5(limit) {
 }
 
 
-//isFullAge5(16, 1990, 1999, 1965);
+isFullAge5(16, 1990, 1999, 1965);
 isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 
@@ -422,13 +442,14 @@ isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
 /////////////////////////////////
 // Lecture: Default parameters
 
-/*
+
 // ES5
+/*
 function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
     
     lastName === undefined ? lastName = 'Smith' : lastName = lastName;
     nationality === undefined ? nationality = 'american' : nationality = nationality;
-    
+    console.log(this);
     this.firstName = firstName;
     this.lastName = lastName;
     this.yearOfBirth = yearOfBirth;
@@ -442,6 +463,8 @@ function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = '
     this.lastName = lastName;
     this.yearOfBirth = yearOfBirth;
     this.nationality = nationality;
+    console.log(this);
+
 }
 
 
@@ -469,24 +492,21 @@ question.set(false, 'Wrong, please try again!');
 console.log(question.get('question'));
 //console.log(question.size);
 
-
 if(question.has(4)) {
     //question.delete(4);
     //console.log('Answer 4 is here')
 }
-
 //question.clear();
 
-
-//question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
-
-
+// question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+// for(let key of question.entries()){
+//     console.log('k '+key);
+// }
 for (let [key, value] of question.entries()) {
     if (typeof(key) === 'number') {
         console.log(`Answer ${key}: ${value}`);
     }
 }
-
 const ans = parseInt(prompt('Write the correct answer'));
 console.log(question.get(ans === question.get('correct')));
 */
@@ -504,14 +524,12 @@ var Person5 = function(name, yearOfBirth, job) {
     this.yearOfBirth = yearOfBirth;
     this.job = job;
 }
-
 Person5.prototype.calculateAge = function() {
     var age = new Date().getFullYear - this.yearOfBirth;
     console.log(age);
 }
-
 var john5 = new Person5('John', 1990, 'teacher');
-
+// --------------------------------------------------
 //ES6
 class Person6 {
     constructor (name, yearOfBirth, job) {
@@ -537,11 +555,9 @@ Person6.greeting();
 
 
 
-
+/*
 /////////////////////////////////
 // Lecture: Classes and subclasses
-
-/*
 //ES5
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -562,12 +578,10 @@ var Athlete5 = function(name, yearOfBirth, job, olymicGames, medals) {
 
 Athlete5.prototype = Object.create(Person5.prototype);
 
-
 Athlete5.prototype.wonMedal = function() {
     this.medals++;
     console.log(this.medals);
 }
-
 
 var johnAthlete5 = new Athlete5('John', 1990, 'swimmer', 3, 10);
 
@@ -634,7 +648,7 @@ All the report data should be printed to the console.
 HINT: Use some of the ES6 features: classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
 
 */
-
+//   ------------------------------------------------////////////////+++++++++++++++++++++++++++++++++++++++++++ MY COMMENT
 
 class Element {
     constructor(name, buildYear) {

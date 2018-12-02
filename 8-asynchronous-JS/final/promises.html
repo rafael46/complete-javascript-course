@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript (example )</h1>
+    <script>
+      console.log('Hello World');
+
+//  **********************-----------**************  PROMISES PROMISES ************************************-----------------------
+      const getIDs = new Promise((resolve, reject) => {
+          setTimeout(() => {
+              console.log("-----Consuming promises using Async/await:, FIRST FUNCTION CALLING ------");
+              resolve([523, 883, 432, 974]);
+          }, 1500);
+      });
+
+      const getRecipe = recID => {
+          return new Promise((resolve, reject) => {
+              setTimeout(ID => {
+                  const recipe = {title: 'Fresh tomato pasta', publisher: 'Jonas -- Schmedtmann '};
+                  resolve(`${ID}: ${recipe.title}`);
+              }, 1500, recID);
+          });
+      };
+
+      const getRelated = publisher => {
+          return new Promise((resolve, reject) => {
+              setTimeout(pub => {
+                  const recipe = {title: 'Italian Pizza', publisher: 'Jonas'};
+                  resolve(`${pub}: ${recipe.title}`);
+              }, 1500, publisher);
+          });
+      };
+
+      // getIDs
+      // .then(IDs => {
+      //     console.log(IDs);
+      //     return getRecipe(IDs[2]);
+      // })
+      // .then(recipe => {
+      //     console.log(recipe);
+      //     return getRelated('Jonas Schmedtmann');   // return getRelated('Jonas Schmedtmann');  recipe.publisher
+      // })
+      // .then(recipe => {
+      //     console.log(recipe);
+      // })
+      // .catch(error => {
+      //     console.log('Error!!');
+      // });
+
+      async function getRecipesAW() {
+          const IDs = await getIDs;
+          console.log(IDs);
+          const recipe = await getRecipe(IDs[2]);
+          console.log(recipe);
+          const related = await getRelated('Jonas Schmedtmann');
+          console.log(related);
+
+          return recipe;
+      }
+      // console.log("-----Consuming promises using Async/await:, ------")
+      getRecipesAW().then(result => console.log(`${result} is the best ever!`));
+      // console.log("-----Consuming promises using Async/await:, ------")
+
+    </script>
+</body>

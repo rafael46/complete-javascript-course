@@ -1,3 +1,16 @@
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+console.log( person.fullName());
+
+
+
 /*****************************
 * Variables and data types
 */
@@ -20,7 +33,7 @@ console.log(job);
 // Variable naming rules
 var _3years = 3;
 var johnMark = 'John and MArk';
-var if = 23;
+// var if = 23;
 */
 
 

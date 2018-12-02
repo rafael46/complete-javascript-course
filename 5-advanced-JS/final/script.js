@@ -143,7 +143,7 @@ console.log(rates);
 
 
 /////////////////////////////
-// Lecture: Functions returning functions
+//                              Lecture: Functions returning functions          //////////////////////////////////////////
 /*
 function interviewQuestion(job) {
     if (job === 'designer') {
@@ -207,7 +207,7 @@ game();
 
 /////////////////////////////
 // Lecture: Closures
-/*
+
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
     return function(yearOfBirth) {
@@ -241,13 +241,13 @@ function interviewQuestion(job) {
 }
 
 interviewQuestion('teacher')('John');
-*/
+
 
 
 
 /////////////////////////////
 // Lecture: Bind, call and apply
-/*
+
 var john = {
     name: 'John',
     age: 26,
@@ -306,7 +306,7 @@ var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
 console.log(fullJapan);
-*/
+
 
 
 
@@ -401,7 +401,7 @@ c) correct answer (I would use a number for this)
 */
 
 
-
+/*
 (function() {
     function Question(question, answers, correct) {
         this.question = question;
@@ -480,3 +480,4 @@ c) correct answer (I would use a number for this)
     nextQuestion();
     
 })();
+*/
