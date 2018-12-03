@@ -79,46 +79,46 @@
      //  **********************-----------**************  PROMISES PROMISES ************************************-----------------------
        
        
-       const getIDs = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve([523, 883, 432, 974]);
-                // reject("erro get ids");
-            }, 1500);
-        });
+    //    const getIDs = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve([523, 883, 432, 974]);
+    //             // reject("erro get ids");
+    //         }, 1500);
+    //     });
 
-        const getRecipe = recID => {
-            return new Promise((resolve, reject) => {
-                setTimeout(ID => {
-                    const recipe = {title: 'Fresh tomato pasta', publisher: 'Jonas'};
-                    resolve(`${ID}: ${recipe.title}`);
-                }, 1500, recID);
-            });
-        };
+    //     const getRecipe = recID => {
+    //         return new Promise((resolve, reject) => {
+    //             setTimeout(ID => {
+    //                 const recipe = {title: 'Fresh tomato pasta', publisher: 'Jonas'};
+    //                 resolve(`${ID}: ${recipe.title}`);
+    //             }, 1500, recID);
+    //         });
+    //     };
 
-        const getRelated = publisher => {
-            return new Promise((resolve, reject) => {
-                setTimeout(pub => {
-                    const recipe = {title: 'Italian Pizza', publisher: 'Jonas'};
-                    resolve(`${pub}: ${recipe.title}`);
-                }, 1500, publisher);
-            });
-        };
+    //     const getRelated = publisher => {
+    //         return new Promise((resolve, reject) => {
+    //             setTimeout(pub => {
+    //                 const recipe = {title: 'Italian Pizza', publisher: 'Jonas'};
+    //                 resolve(`${pub}: ${recipe.title}`);
+    //             }, 1500, publisher);
+    //         });
+    //     };
 
-        getIDs
-        .then(IDs => {
-            console.log(IDs);
-            return getRecipe(IDs[2]);
-        })
-        .then(recipe => {
-            console.log(recipe);
-            return getRelated('Jonas Schmedtmann');   // return getRelated('Jonas Schmedtmann');
-        })
-        .then(recipe => {
-            console.log(recipe);
-        })
-        .catch(error => {
-            console.log('Error!!');
-        });
+        // getIDs
+        // .then(IDs => {
+        //     console.log(IDs);
+        //     return getRecipe(IDs[2]);
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        //     return getRelated('Jonas Schmedtmann');   // return getRelated('Jonas Schmedtmann');
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        // })
+        // .catch(error => {
+        //     console.log('Error!!');
+        // });
 
         // async function getRecipesAW() {
         //     const IDs = await getIDs;
@@ -135,11 +135,11 @@
 
         // -----------------------------------------------------------------------------------------------------------------
         
-        
+        // Access to fetch at from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
         function getWeather(woeid) {
             fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}/`)
             .then(result => {
-                // console.log(result);
+                console.log(result);
                 return result.json();
             })
             .then(data => {
@@ -164,7 +164,7 @@
                 alert(error);
             }
         }
-        // getWeatherAW(2487956);
+        getWeatherAW(2487956);
         
         let dataLondon;
 

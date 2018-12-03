@@ -81,7 +81,7 @@ obj1.age = 30;
 console.log(obj1.age);
 console.log(obj2.age);
 
-// Functions
+// --------------------------------------- Functions
 var age = 27;
 var obj = {
     name: 'Jonas',
@@ -135,7 +135,7 @@ var ages = arrayCalc(years, calculateAge);
 var fullAges = arrayCalc(ages, isFullAge);
 var rates = arrayCalc(ages, maxHeartRate);
 
-console.log(ages);
+console.log('--ages--: '+ages);
 console.log(fullAges);
 console.log(rates);
 */
@@ -144,7 +144,7 @@ console.log(rates);
 
 /////////////////////////////
 //                              Lecture: Functions returning functions          //////////////////////////////////////////
-/*
+
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -171,8 +171,8 @@ designerQuestion('jane');
 designerQuestion('Mark');
 designerQuestion('Mike');
 
-interviewQuestion('teacher')('Mark');
-*/
+interviewQuestion('teacher')('-Mark-');
+
 
 
 
