@@ -178,7 +178,7 @@ interviewQuestion('teacher')('-Mark-');
 
 /////////////////////////////
 // Lecture: IIFE  IMMEDIATELY INVOKED FUNCTIONS EXPRESSIONS--------SECTION 5
-/*
+console.log('----------------------    -IIFE- IMMEDIAETLY INVOKED FUNCTIONS EXPRESSINS -----------------------------')
 function game() {
     var score = Math.random() * 10;
     console.log(score >= 5);
@@ -190,7 +190,7 @@ game();
     console.log(name);
     var score = Math.random() * 10;
     console.log(score >= 5);
-})();
+})('JHON');
 
 // console.log(score);
 
@@ -203,10 +203,12 @@ game();
 (function(){
 
 })
-*/
+
 
 /////////////////////////////
 // Lecture: Closures
+console.log('---------------------------             CLOSURES           ---------------------------------------')
+console.log('--------           An inner function has always access to the variable and parameters of its outer function, even after the outer function has returned        ----------------------------')
 
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
@@ -215,18 +217,15 @@ function retirement(retirementAge) {
         console.log((retirementAge - age) + a);
     }
 }
-
 var retirementUS = retirement(66);
-
 var retirementGermany = retirement(65);
 var retirementIceland = retirement(67);
 
-retirementGermany(1990);
 retirementUS(1990);
+retirementGermany(1990);
 retirementIceland(1990);
 
 retirement(66)(1990);
-
 
 function interviewQuestion(job) {
     return function(name) {
@@ -243,18 +242,18 @@ function interviewQuestion(job) {
 interviewQuestion('teacher')('John');
 
 
-
-
 /////////////////////////////
-// Lecture: Bind, call and apply
-
+// ----------                              Lecture: Bind, call and apply    -------------------------------------------------------------------
+console.log('---------------------------                == BIND, CALL AND APPLY ==             ---------------------------------------')
+console.log('this: '+ this);
 var john = {
     name: 'John',
     age: 26,
     job: 'teacher',
     presentation: function(style, timeOfDay) {
         if (style === 'formal') {
-            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ----' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+            console.log('this: '+ this);
         } else if (style === 'friendly') {
             console.log('Hey! What\'s up? I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
         }
@@ -271,7 +270,7 @@ john.presentation('formal', 'morning');
 
 john.presentation.call(emily, 'friendly', 'afternoon');
 
-//john.presentation.apply(emily, ['friendly', 'afternoon']);
+john.presentation.apply(emily, ['friendly', 'afternoon']);
 
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
@@ -283,6 +282,7 @@ emilyFormal('afternoon');
 
 
 // Another cool example     -------------------------   /// VERY USEFUL EXAMPLE, USING BIND..
+console.log('//                 Another cool example          -------------------------   ------ VERY USEFUL EXAMPLE, USING BIND.   ');
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
