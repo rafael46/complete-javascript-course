@@ -37,35 +37,35 @@
           });
       };
 
-      // getIDs
-      // .then(IDs => {
-      //     console.log(IDs);
-      //     return getRecipe(IDs[2]);
-      // })
-      // .then(recipe => {
-      //     console.log(recipe);
-      //     return getRelated('Jonas Schmedtmann');   // return getRelated('Jonas Schmedtmann');  recipe.publisher
-      // })
-      // .then(recipe => {
-      //     console.log(recipe);
-      // })
-      // .catch(error => {
-      //     console.log('Error!!');
-      // });
-
-      async function getRecipesAW() {
-          const IDs = await getIDs;
+      getIDs
+      .then(IDs => {
           console.log(IDs);
-          const recipe = await getRecipe(IDs[2]);
+          return getRecipe(IDs[2]);
+      })
+      .then(recipe => {
           console.log(recipe);
-          const related = await getRelated('Jonas Schmedtmann');
-          console.log(related);
+          return getRelated('Jonas Schmedtmann');   // return getRelated('Jonas Schmedtmann');  recipe.publisher
+      })
+      .then(recipe => {
+          console.log(recipe);
+      })
+      .catch(error => {
+          console.log('Error!!');
+      });
 
-          return recipe;
-      }
-      // console.log("-----Consuming promises using Async/await:, ------")
-      getRecipesAW().then(result => console.log(`${result} is the best ever!`));
-      // console.log("-----Consuming promises using Async/await:, ------")
+      // async function getRecipesAW() {
+      //     const IDs = await getIDs;
+      //     console.log(IDs);
+      //     const recipe = await getRecipe(IDs[2]);
+      //     console.log(recipe);
+      //     const related = await getRelated('Jonas Schmedtmann');
+      //     console.log(related);
+
+      //     return recipe;
+      // }
+      // // console.log("-----Consuming promises using Async/await:, ------")
+      // getRecipesAW().then(result => console.log(`${result} is the best ever!`));
+      // // console.log("-----Consuming promises using Async/await:, ------")
 
     </script>
 </body>
