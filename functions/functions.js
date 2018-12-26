@@ -1,7 +1,7 @@
 
 // The 7 ways of the function
 //https://javascript.christmas/2018/13
-
+// CLOSURE
 function counter() {
   let count = 0;
 
