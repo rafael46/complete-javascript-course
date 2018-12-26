@@ -44,6 +44,3 @@ Plus, I made all the course slides available for download, to make it easier to 
 
 **A:** Yep, I thought about this! I started quite an active Discord chatroom for you to chat with other students, help each other out or just hang out with like-minded people. You can [join using this invite](https://discord.gg/0ocsLcmnIZqxMSYD).
 
-### Q10: How do I get my certificate of completion?
-
-**A:** A certificate of completion is provided by Udemy after you complete 100% of the course. After completing the course, just click on the small trophy icon on the course overview page. If you want to change your name on the certificate, please [contact the Udemy support team](https://support.udemy.com/hc/en-us).
