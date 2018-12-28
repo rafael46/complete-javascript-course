@@ -40,3 +40,15 @@ console.log(`\n---- AVERAGE2 ?? it is not the same value please verify :=  ${ave
 //
 
 
+const doubled = euros.reduce((total, amount) => {
+  total.push(amount * 2);
+  return total;
+}, []);
+
+// doubled // [59.52, 83.7, 93]
+
+doubled.map((item, i) =>{
+  console.log(`---- Doubled: ${item} ` );
+})
+
+// console.log(`---- Doubled: ${doubled}` );
